@@ -23,7 +23,7 @@ export class AuthService {
     return this.http.post<{ access_token: string }>(`${this.apiUrl}/auth/login`, { email, password })
       .subscribe(response => {
         console.log(response.access_token);
-        
+
         localStorage.setItem('access_token', response.access_token);
 
         this.tokenSubject.next(response.access_token);
@@ -44,4 +44,26 @@ export class AuthService {
   isAuthenticated() {
     return !!this.tokenSubject.value;
   }
+
+
+  isTokenValid() {
+    const token = this.tokenSubject.value;
+    if (!token) {
+      return false;
+    }
+
+    // Optionally: Decode the token and check its expiration time
+    const decodedToken = this.decodeToken(token);
+    return decodedToken && decodedToken.exp * 1000 > Date.now(); // Example for JWT
+  }
+
+  private decodeToken(token: string): any {
+    try {
+      const payload = token.split('.')[1];
+      return JSON.parse(atob(payload));
+    } catch (e) {
+      return null;
+    }
+  }
+
 }

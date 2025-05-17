@@ -77,6 +77,8 @@ Before you begin, ensure you have the following installed:
 
 3. The backend API will be running on [http://localhost:3000](http://localhost:3000).
 
+4. rename .env.devlopment to .env if running without docker
+
 ---
 
 ## Docker Configuration
@@ -101,6 +103,17 @@ The backend and MongoDB are containerized using Docker. The `docker-compose.yml`
    ```bash
    docker-compose down
    ```
+
+---
+
+## Screenshots
+
+Here are some screenshots of the Z Vault app:
+
+![Screenshot 1](screenshots/1.PNG)
+![Screenshot 2](screenshots/2.PNG)
+![Screenshot 3](screenshots/3.PNG)
+![Screenshot 4](screenshots/4.PNG)
 
 ---
 

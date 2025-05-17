@@ -12,11 +12,11 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
 
-  // Protected routes (with sidebar) go inside LoggedInLayoutComponent
+  // Protected routes
   {
     path: '',
-    component: LoggedInLayoutComponent,  // Layout for logged-in users
-    canActivate: [authGuard],  // Guard to ensure only authenticated users can access
+    component: LoggedInLayoutComponent,
+    canActivate: [authGuard],  // Guard for logged-in users
     children: [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'passwords', component: PasswordListComponent },
