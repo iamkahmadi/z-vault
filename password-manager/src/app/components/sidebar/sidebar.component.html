@@ -1,0 +1,37 @@
+<!-- sidebar.component.html -->
+<div 
+  [ngClass]="{
+    'w-64': isSidebarVisible, 
+    'hidden': !isSidebarVisible,
+    'lg:w-1/4': true,
+    'h-screen': true,
+    'bg-gray-900': true,
+    'text-white': true,
+    'fixed': true,
+    'flex': true,
+    'flex-col': true,
+    'shadow-lg': true,
+    'z-10': true,
+    'transition-all': true,
+    'duration-300': true,
+    'ease-in-out': true
+  }"
+>
+  <!-- Sidebar header -->
+  <div class="p-6 text-xl font-bold border-b border-gray-700 flex items-center justify-between">
+    <span class="text-white">Z Vault</span>
+    <!-- Optional Mobile Hamburger (for smaller screens) -->
+    <button class="lg:hidden text-white" (click)="toggleSidebar()">☰</button>
+  </div>
+  
+  <!-- Sidebar navigation -->
+  <nav class="flex-1 p-4 space-y-4">
+    <a routerLink="/dashboard" routerLinkActive="bg-gray-800" class="block p-2 rounded hover:bg-gray-700 cursor-pointer transition-all duration-300">Dashboard</a>
+    <a routerLink="/passwords" routerLinkActive="bg-gray-800" class="block p-2 rounded hover:bg-gray-700 cursor-pointer transition-all duration-300">Passwords</a>
+  </nav>
+
+  <!-- Sidebar footer (Logout) -->
+  <div class="p-4 border-t border-gray-700">
+    <button (click)="logout()" class="w-full bg-red-600 py-2 rounded hover:bg-red-700 cursor-pointer transition-all duration-300">Logout</button>
+  </div>
+</div>

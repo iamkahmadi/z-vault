@@ -1,0 +1,29 @@
+# Ignore specific directories and files for Angular (Frontend)
+password-manager/dist/
+password-manager/.angular/
+password-manager/.vscode/
+password-manager/node_modules/
+
+# Ignore specific directories and files for NestJS (Backend)
+password-manager-backend/dist/
+password-manager-backend/node_modules/
+password-manager-backend/dist/
+password-manager-backend/.env
+password-manager-backend/.docker/
+
+# Ignore environment files in root if any
+password-manager-backend/.env
+
+# Ignore log files
+password-manager-backend/*.log
+
+# Ignore OS-specific files
+password-manager-backend/.DS_Store
+password-manager-backend/Thumbs.db
+
+# Ignore npm logs
+password-manager-backend/npm-debug.log*
+
+# Ignore Docker-related files
+password-manager-backend/docker-compose.override.yml
+*.log

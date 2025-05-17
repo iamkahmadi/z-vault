@@ -1,0 +1,24 @@
+<div class="max-w-4xl mx-auto mt-10 p-6 bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-xl shadow-xl animate-fadeIn">
+  <div class="flex flex-col sm:flex-row items-center justify-between mb-6">
+    <div>
+      <h2 class="text-3xl font-bold">Welcome Back!</h2>
+      <p class="text-sm text-gray-300 mt-1 transition duration-300">Your email: <span class="font-medium text-white">{{ userEmail }}</span></p>
+    </div>
+    <button (click)="logout()" class="mt-4 sm:mt-0 bg-red-600 hover:bg-red-700 px-4 py-2 rounded transition-all duration-300">Logout</button>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
+    <div class="bg-gray-700 rounded-lg p-5 shadow hover:scale-[1.02] transition-transform duration-300">
+      <h3 class="text-xl font-semibold mb-2">Saved Passwords</h3>
+      <p class="text-5xl font-bold text-blue-400">{{ passwordCount }}</p>
+    </div>
+
+    <div class="bg-gray-700 rounded-lg p-5 shadow hover:scale-[1.02] transition-transform duration-300">
+      <h3 class="text-xl font-semibold mb-2">Manage</h3>
+      <p class="mb-3 text-gray-300">You can update or manage your passwords anytime.</p>
+      <button (click)="goToChangePassword()" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded transition-all duration-300">
+        Manage Passwords
+      </button>
+    </div>
+  </div>
+</div>

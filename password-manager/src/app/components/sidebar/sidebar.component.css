@@ -1,0 +1,11 @@
+/* Add this to your global styles or component-specific styles */
+@media (max-width: 1024px) {
+  /* Sidebar takes full width on mobile */
+  .sidebar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+}

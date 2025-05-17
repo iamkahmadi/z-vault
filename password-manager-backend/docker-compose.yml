@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:6
+    container_name: password-manager-mongo
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo_data:/data/db
+
+  app:
+    build: .
+    container_name: password-manager-api
+    ports:
+      - 3000:3000
+    env_file:
+      - .env.production
+    depends_on:
+      - mongo
+
+volumes:
+  mongo_data:
